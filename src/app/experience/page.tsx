@@ -6,80 +6,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const experience = [
   {
-    company: "Cankaya University",
-    location: "Ankara, Turkey",
-    position: "Undergraduate Teaching Assistant",
-    period: "Nov 2024 - Present",
+    company: "Ascentrik Research Pvt. Ltd.",
+    location: "Maharashtra, India (Hybrid)",
+    position: "Data Analyst Intern",
+    period: "Jun 2024 – Jul 2024",
     description: [
       {
-        id: "cankaya-1",
-        text: "Assisting in SENG271 (Software Project I), SENG272 (Software Project II), SENG384 (Software Project IV), SENG101 (Computer Programming I) and SENG102 (Computer Programming II) courses.",
+        id: "ascentrik-1",
+        text: "Analyzed and transformed large datasets into actionable insights to support business decision-making.",
       },
       {
-        id: "cankaya-2",
-        text: "Supporting students with programming concepts, reviewing assignments, and providing guidance in software development projects.",
+        id: "ascentrik-2",
+        text: "Performed data collection, cleaning, and analysis using Excel, SQL, and Python.",
+      },
+      {
+        id: "ascentrik-3",
+        text: "Identified patterns and trends through statistical analysis and data mining techniques.",
+      },
+      {
+        id: "ascentrik-4",
+        text: "Presented data-driven findings to improve strategic planning and operational efficiency.",
       },
     ],
-  },
-  {
-    company: "Tourist: Travel the World",
-    location: "Remote",
-    position: "Web Development Intern",
-    period: "July 2024 - Nov 2024",
-    description: [
-      {
-        id: "tourist-1",
-        text: "Collaborated with the development team to design and implement new features for the company's AI-powered travel planning platform.",
-      },
-      {
-        id: "tourist-2",
-        text: "Worked with web development technologies and contributed to both frontend and backend development tasks.",
-      },
-      {
-        id: "tourist-3",
-        text: "Implemented CI/CD pipelines, managed containerized deployments, and optimized development workflows.",
-      },
-    ],
-  },
-  {
-    company: "Google Game and Application Academy",
-    location: "Istanbul, Turkey",
-    position: "Trainee",
-    period: "Nov 2023 - July 2024",
-    description: [
-      {
-        id: "google-1",
-        text: "Participated in a rigorous training program focused on game and application development using industry-standard tools and practices.",
-      },
-      {
-        id: "google-2",
-        text: "Collaborated on team projects, enhancing skills in software design, coding, and project management in a professional setting.",
-      },
-      {
-        id: "google-3",
-        text: "Engaged in hands-on learning and developed proficiency in modern development environments.",
-      },
-    ],
-  },
-  {
-    company: "G.Round",
-    location: "Los Angeles, CA (Remote)",
-    position: "QA Tester",
-    period: "May 2023 - May 2024",
-    description: [
-      {
-        id: "ground-1",
-        text: "Performed comprehensive testing of pre-release games to identify bugs, performance issues, and potential improvements.",
-      },
-      {
-        id: "ground-2",
-        text: "Provided detailed feedback and reports to developers, enhancing the overall quality and user experience of gaming products.",
-      },
-      {
-        id: "ground-3",
-        text: "Developed expertise in QA methodologies, tools, and processes while working within a dynamic international team.",
-      },
-    ],
+    skills: "Statistical Data Analysis · SQL · CRM Databases · Data Mining · Excel · Python",
   },
 ];
 
@@ -158,6 +107,12 @@ export default function ExperiencePage() {
                       </li>
                     ))}
                   </ul>
+                  {exp.skills && (
+                    <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="font-semibold text-primary">Skills: </span>
+                      {exp.skills}
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>

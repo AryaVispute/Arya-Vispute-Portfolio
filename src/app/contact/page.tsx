@@ -1,16 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Copy, Check } from "lucide-react";
 import Link from "next/link";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactPage() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("aryavispute06@gmail.com");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch { }
   };
 
   return (
@@ -25,121 +30,92 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-[700px]">
-          Have a question or want to work together? Feel free to reach out!
+          Open to collaborations, internships, and exciting projects. Let's connect and build something great.
         </p>
       </motion.div>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Card>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="max-w-2xl mx-auto"
+      >
+        {/* Custom Card with Border Glow Effect */}
+        <div className="blob-card-wrapper relative p-[3px] rounded-[14px] overflow-hidden">
+          {/* Rotating gradient border */}
+          <div className="absolute inset-0 z-[1] animate-[border-rotate_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent,transparent_30%,#14b8a6,#3b82f6,#8b5cf6,transparent_70%,transparent)]" />
+
+          {/* Card background */}
+          <div className="relative z-[2] bg-white dark:bg-black rounded-[12px] overflow-hidden">
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
-                Contact Form
-                <span className="text-sm font-normal text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-md">
-                  Coming Soon
-                </span>
-              </CardTitle>
+              <CardTitle className="text-center">Connect with Me</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="bg-muted/50 rounded-lg p-4 mb-4">
-                <p className="text-sm text-muted-foreground">
-                  🚧 The contact form is currently under development. Please use the alternative contact methods provided on the right to reach out to me.
-                </p>
+            <CardContent className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <Link href="mailto:aryavispute06@gmail.com" className="group">
+                  <div className="flex items-center justify-center gap-2 rounded-xl border p-4 transition-colors hover:bg-gradient-to-br hover:from-teal-400/30 hover:via-[rgb(59_130_246/0.3)] hover:to-violet-500/30">
+                    <Mail className="h-5 w-5" />
+                    <span className="font-medium">Email</span>
+                  </div>
+                </Link>
+                <Link href="https://github.com/AryaVispute" target="_blank" rel="noopener noreferrer" className="group">
+                  <div className="flex items-center justify-center gap-2 rounded-xl border p-4 transition-colors hover:bg-gradient-to-br hover:from-teal-400/30 hover:via-[rgb(59_130_246/0.3)] hover:to-violet-500/30">
+                    <Github className="h-5 w-5" />
+                    <span className="font-medium">GitHub</span>
+                  </div>
+                </Link>
+                <Link href="https://www.linkedin.com/in/arya-vispute-b8a13b313/" target="_blank" rel="noopener noreferrer" className="group">
+                  <div className="flex items-center justify-center gap-2 rounded-xl border p-4 transition-colors hover:bg-gradient-to-br hover:from-teal-400/30 hover:via-[rgb(59_130_246/0.3)] hover:to-violet-500/30">
+                    <Linkedin className="h-5 w-5" />
+                    <span className="font-medium">LinkedIn</span>
+                  </div>
+                </Link>
               </div>
-              <form onSubmit={handleSubmit} className="space-y-4 opacity-60">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Name
-                  </label>
-                  <Input id="name" placeholder="Your name" disabled />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    disabled
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Your message"
-                    disabled
-                    className="min-h-[150px]"
-                  />
-                </div>
-                <Button type="submit" className="w-full" disabled>
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="space-y-8"
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Other Ways to Connect</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <Link
-                href="mailto:bbayburtlu@hotmail.com"
-                className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-                <span>bbayburtlu@hotmail.com</span>
-              </Link>
-              <Link
-                href="https://github.com/byigitt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-              >
-                <Github className="w-5 h-5" />
-                <span>github.com/byigitt</span>
-              </Link>
-              <Link
-                href="https://linkedin.com/in/bbayburtlu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-                <span>linkedin.com/in/bbayburtlu</span>
-              </Link>
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex items-center gap-2 rounded-full bg-background px-4 py-2 border">
+                  <Mail className="h-4 w-4" />
+                  <span className="text-sm">aryavispute06@gmail.com</span>
+                  <Button variant="ghost" size="sm" onClick={copyEmail} className="rounded-full">
+                    {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground">Typically responds within 24 hours</p>
+              </div>
             </CardContent>
-          </Card>
+          </div>
+        </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Response Time</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-500 dark:text-gray-400">
-                I typically respond within 24-48 hours. For urgent matters, please
-                reach out via email directly.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
+        {/* Border rotation animation */}
+        <style jsx global>{`
+          @keyframes border-rotate {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+          
+          .blob-card-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            z-index: 0;
+            background: conic-gradient(
+              from 0deg,
+              transparent,
+              transparent 30%,
+              #14b8a6,
+              #3b82f6,
+              #8b5cf6,
+              transparent 70%,
+              transparent
+            );
+            animation: border-rotate 4s linear infinite;
+          }
+        `}</style>
+      </motion.div>
     </div>
   );
-} 
+}

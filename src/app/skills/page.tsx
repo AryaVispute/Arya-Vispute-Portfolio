@@ -8,22 +8,22 @@ const skills = {
   programmingLanguages: {
     icon: <Code2 className="h-5 w-5" />,
     title: "Programming Languages",
-    items: ["TypeScript", "JavaScript", "Java", "Python", "PHP", "C", "Go", "SQL", "C#", "Julia"],
+    items: ["JavaScript", "HTML5", "CSS3", "TypeScript", "Python", "Java", "PHP", "C", "C++", "SQL"],
   },
   technologies: {
     icon: <Terminal className="h-5 w-5" />,
     title: "Technologies",
-    items: ["Next.js", "Node.js", "React.js", "Express", "EJS", "MongoDB", "MySQL", "Git", "Postman", "Redis"],
+    items: ["React.js", "Next.js", "Node.js", "FastAPI", "REST API Integration", "WebSocket", "MERN Stack", "MongoDB", "Supabase (PostgreSQL)", "MySQL", "AWS", "Artificial Intelligence (AI)"],
   },
   tools: {
     icon: <Laptop className="h-5 w-5" />,
     title: "Tools",
-    items: ["Cursor", "Ollama", "Visual Studio Code", "Adobe Photoshop", "Figma", "Adobe Premiere", "Vegas Pro"],
+    items: ["Figma", "Canva", "Visual Studio Code", "Git", "GitHub", "Microsoft Excel", "Vercel"],
   },
   languages: {
     icon: <Globe className="h-5 w-5" />,
     title: "Languages",
-    items: ["Turkish (Native)", "English (Fluent)", "German (Beginner)"],
+    items: ["English (Fluent)", "Marathi (Native)", "Hindi (Fluent)"],
   },
 };
 
@@ -97,8 +97,9 @@ export default function SkillsPage() {
             key={key} 
             variants={item}
             transition={{ delay: index * 0.1 }}
+            className="h-full"
           >
-            <Card className="group hover:shadow-lg transition-shadow duration-300">
+            <Card className="group hover:shadow-lg transition-shadow duration-300 h-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <motion.div

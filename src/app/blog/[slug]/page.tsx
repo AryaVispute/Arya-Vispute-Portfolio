@@ -64,12 +64,12 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     dateModified: post.date,
     author: {
       '@type': 'Person',
-      name: post.authors?.[0] || 'Barış Bayburtlu',
+      name: post.authors?.[0] || 'Arya Vispute',
       url: 'https://portfolio.bayburt.lu/about',
     },
     publisher: {
       '@type': 'Person',
-      name: 'Barış Bayburtlu',
+      name: 'Arya Vispute',
       url: 'https://portfolio.bayburt.lu',
     },
   }

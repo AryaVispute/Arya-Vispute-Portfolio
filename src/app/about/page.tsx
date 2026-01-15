@@ -10,12 +10,12 @@ const aboutSections = [
   {
     title: "Hello World!",
     icon: <Heart className="h-5 w-5 text-primary" />,
-    content: "I'm Barış, a 21 years old junior software engineering student who turned a passion for gaming servers into a love for web development. When I'm not coding, you'll find me exploring new tech, contributing to open-source, or probably debugging with an energy drink in hand.",
+    content: "I’m Arya, a 19-year-old computer engineering student who enjoys blending design, development, and AI to build meaningful digital experiences. I love taking an idea from concept to execution—starting with thoughtful UI/UX design, developing it into a functional web application, and enhancing it using AI-driven features. I’m constantly exploring new tools and technologies to improve both how products look and how they work.",
   },
   {
     title: "What I Do",
     icon: <Rocket className="h-5 w-5 text-primary" />,
-    content: "I build modern web applications with a focus on user experience and performance. I love turning complex problems into simple, beautiful, and intuitive solutions.",
+    content: "I specialize in web development with a strong focus on UI/UX design and AI-assisted solutions. I build modern, responsive applications using technologies like React and Next.js, design intuitive interfaces using Figma and Canva, and leverage AI tools and APIs to improve productivity, user experience, and problem-solving. My approach combines clean design, efficient code, and intelligent features to create user-friendly and impactful applications.",
   },
 ];
 
@@ -150,91 +150,43 @@ export default function AboutPage() {
         ))}
       </motion.div>
 
-      {/* Portfolio Section */}
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-20"
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-8 flex items-center justify-center"
       >
-        <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">
-          Portfolio
-        </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {portfolioProjects.map((project) => (
-            <motion.div
-              key={project.title}
-              variants={item}
-              className="group relative"
+        <Link
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-6 pl-6 pr-2 py-2 border-2 border-black dark:border-white rounded-2xl bg-transparent cursor-pointer transition-all duration-300 ease-in-out hover:bg-black dark:hover:bg-white active:scale-95"
+        >
+          <span className="text-base font-medium text-black dark:text-white transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-teal-400 group-hover:via-[rgb(59_130_246/0.4)] group-hover:to-violet-500 group-hover:bg-clip-text group-hover:text-transparent">
+            Download Resume
+          </span>
+          <span className="flex items-center justify-center bg-gradient-to-br from-teal-400 via-[rgb(59_130_246/0.4)] to-violet-500 p-2 rounded-lg transition-transform duration-300 group-hover:rotate-45">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="w-5 h-5 text-black dark:text-white transition-transform duration-300 group-hover:-rotate-45"
             >
-              <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
-                <Link 
-                  href={project.liveUrl || project.githubUrl || ""} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block aspect-video group cursor-pointer overflow-hidden"
-                >
-                  <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-all duration-300 group-hover:blur-sm"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20">
-                      <LinkIcon className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                </Link>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 text-xs rounded-md bg-muted font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    {project.liveUrl && (
-                      <Link
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        Live Demo
-                      </Link>
-                    )}
-                    {project.githubUrl && (
-                      <Link
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Github className="h-4 w-4" />
-                        Source Code
-                      </Link>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+              <path
+                fill="currentColor"
+                d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42s1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1"
+              />
+            </svg>
+          </span>
+        </Link>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mt-12 text-center"
+        className="mt-4 text-center"
       >
         <div className="flex items-center justify-center gap-2 text-muted-foreground">
           <Coffee className="h-5 w-5" />

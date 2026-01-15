@@ -6,20 +6,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const education = [
   {
-    school: "Cankaya University",
-    location: "Ankara, Turkey",
-    degree: "Bachelor of Engineering in Software",
-    period: "Oct. 2022 - June 2026 (Expected)",
-    gpa: "GPA: 3.19",
-    description: "Focused on software development and computer science fundamentals.",
+    school: "Fr. Conceicao Rodrigues Institute of Technology (FCRIT)",
+    location: "Vashi, Navi Mumbai",
+    degree: "Bachelor of Technology (B.Tech) – Computer Engineering",
+    period: "2025 – 2028 (Present)",
+    gpa: "Grade: 10 CGPI",
+    description: "Pursuing Bachelor of Technology in Computer Engineering.",
   },
   {
-    school: "Icel Anatolian Highschool",
-    location: "Mersin, Turkey",
-    degree: "High School Diploma",
-    period: "Sep. 2017 - June 2021",
-    gpa: "GPA: 3.74 (92.6/100.0)",
-    description: "Graduated with honors.",
+    school: "Maharashtra State Board of Technical Education (MSBTE)",
+    location: "Maharashtra, India",
+    degree: "Diploma in Computer Engineering",
+    period: "2022 – 2025",
+    gpa: "Grade: 96.12%",
+    description: "Completed Diploma in Computer Engineering with distinction.",
+  },
+  {
+    school: "Vasant Vihar High School & Junior College (VVHS)",
+    location: "Thane, India",
+    degree: "Secondary School Education (SSC)",
+    period: "2011 – 2022",
+    gpa: "Grade: 92.80%",
+    description: "Completed Secondary School Education with excellence.",
   },
 ];
 
