@@ -1,19 +1,7 @@
 import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [[remarkGfm, { 
-      singleTilde: false,
-      tablePipeAlign: true,
-      tableCellPadding: true
-    }]],
-  },
-})
 
 const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -36,4 +24,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withMDX(nextConfig)
+export default nextConfig
