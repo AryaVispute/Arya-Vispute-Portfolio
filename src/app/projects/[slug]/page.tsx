@@ -5,12 +5,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Link as LinkIcon, ArrowLeft } from "lucide-react";
 
-export default function ProjectDetailPage({
+type Params = Promise<{ slug: string }>;
+
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Params;
 }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
 
   return (
