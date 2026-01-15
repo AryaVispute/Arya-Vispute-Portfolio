@@ -30,7 +30,7 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-[700px]">
-          Open to collaborations, internships, and exciting projects. Let's connect and build something great.
+          Open to collaborations, internships, and exciting projects. Let&apos;s connect and build something great.
         </p>
       </motion.div>
 

@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Coffee, Rocket, ExternalLink, Github, Link as LinkIcon } from "lucide-react";
-import Image from "next/image";
+import { Heart, Coffee, Rocket } from "lucide-react";
 import Link from "next/link";
 
 const aboutSections = [
@@ -19,83 +18,7 @@ const aboutSections = [
   },
 ];
 
-const portfolioProjects = [
-  {
-    title: "Personal Portfolio",
-    description: "My personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.",
-    image: "https://bayburt.lu/portfolio/portfolio.png",
-    liveUrl: "https://portfolio.bayburt.lu",
-    githubUrl: "https://github.com/byigitt/portfolio",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
-  },
-  {
-    title: "Soulana",
-    description: "Soulana is a web application that allows users to donate secure, fast and transparently using blockchain technology. Ostim Solana Hackathon, 1st place.",
-    image: "https://bayburt.lu/portfolio/soulana.png",
-    liveUrl: "https://cyberia-frontend.vercel.app",
-    githubUrl: "https://github.com/wearesoulana/soulana-frontend",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
-  },
-  {
-    title: "imatil",
-    description: "imatil is a modern, browser-based file conversion tool built with Next.js 15 that enables users to convert media files directly in their browser using WebAssembly technology.",
-    image: "https://bayburt.lu/portfolio/imatil.png",
-    liveUrl: "https://i.bayburt.lu",
-    githubUrl: "https://github.com/byigitt/imatil",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebAssembly", "Shadcn/UI", "FFMPEG"]
-  },
-  {
-    title: "cankaya.chat",
-    description: "cankaya.chat is a modern, browser-based chat application built with Next.js 15 that enables users to chat with each other anonymously using WebSocket technology.",
-    image: "https://bayburt.lu/portfolio/cankayachat.png",
-    liveUrl: "https://cankaya.chat",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebSocket", "PWA"]
-  },
-  {
-    title: "smartmove",
-    description: "smartmove is an AI-powered passenger analysis system for the Ankara Metro network that combines real-time passenger counting using YOLOv8 object detection and predictive analytics to forecast crowd density. Ostim AI Competition, 2nd place.",
-    image: "https://bayburt.lu/portfolio/smartmove.png",
-    githubUrl: "https://github.com/byigitt/smartmove",
-    tags: ["Python", "Numpy", "Pandas", "Scikit-learn", "Seaborn", "YOLOv8", "Shadcn/UI"]
-  },
-  {
-    title: "Flashy",
-    description: "Flashy is a modern, intuitive flashcard application built with Next.js 15 that helps users study effectively through digital flashcards. Features include group organization, study mode with shuffle functionality, and smooth animations.",
-    image: "https://bayburt.lu/portfolio/flashy.png", 
-    liveUrl: "https://flashy-byigitt.vercel.app/",
-    githubUrl: "https://github.com/byigitt/flashy",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"]
-  },
-  {
-    title: "Suncore",
-    description: "Suncore is an innovative open-source audio transformation platform inspired by nightcore.studio, designed to help users create nightcore versions of their favorite music. Features include real-time playback speed adjustment, reverb control, bass boost, and SoundCloud API integration.",
-    image: "https://bayburt.lu/portfolio/suncore.png",
-    liveUrl: "https://suncore.vercel.app",
-    githubUrl: "https://github.com/byigitt/suncore",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Tone.js"]
-  },
-  {
-    title: "Tourist AI Planner",
-    description: "Tourist AI Planner is a web application that helps users plan their trips by providing personalized recommendations for destinations, activities, and accommodations. Did my internship here. ",
-    image: "https://bayburt.lu/portfolio/tourist.png",
-    liveUrl: "https://touristapplication.com",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    title: "StarSalesInv",
-    description: "Star Sales & Investment is committed to delivering high-quality products at competitive prices to businesses of all sizes.",
-    image: "https://bayburt.lu/portfolio/starsales.png",
-    liveUrl: "https://starsalesinv.com",
-    tags: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    title: "Wholesale Template",
-    description: "Wholesale Template is a website template for wholesale businesses.",
-    image: "https://bayburt.lu/portfolio/template.png",
-    liveUrl: "https://bayburt.lu/template1",
-    tags: ["HTML", "CSS", "JavaScript"],
-  }
-];
+
 
 const container = {
   hidden: { opacity: 0 },

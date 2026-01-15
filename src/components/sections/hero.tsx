@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, FileText, KeyRound } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import { SpotifyNowPlaying } from "@/components/spotify-now-playing";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ScannerLoader } from "@/components/ui/scanner-loader";
