@@ -39,6 +39,10 @@ const routes = [
     label: "Projects",
   },
   {
+    href: "/certificates",
+    label: "Certificates",
+  },
+  {
     href: "/contact",
     label: "Contact",
   },
